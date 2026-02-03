@@ -1,0 +1,93 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║     SISTEMA DE MANUTENÇÃO PREVENTIVA - GUIA DE INSTALAÇÃO           ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Este guia explica como instalar e usar o sistema no seu computador.
+
+════════════════════════════════════════════════════════════════════════
+                    PASSO 1: PRIMEIRA VEZ (INSTALAÇÃO)
+════════════════════════════════════════════════════════════════════════
+
+Na PRIMEIRA VEZ que for usar o sistema, siga estes passos:
+
+1. Clique duas vezes no arquivo "instalar.bat"
+
+2. Se aparecer uma mensagem de segurança do Windows:
+   - Clique em "Mais informações"
+   - Clique em "Executar assim mesmo"
+
+3. Aguarde a instalação terminar (pode demorar alguns minutos)
+   - O script vai instalar automaticamente: Java, Maven, Node.js e pnpm
+   - Você verá mensagens na tela indicando o progresso
+
+4. Quando terminar, REINICIE O COMPUTADOR
+
+════════════════════════════════════════════════════════════════════════
+                    PASSO 2: ABRINDO O SISTEMA
+════════════════════════════════════════════════════════════════════════
+
+Toda vez que quiser usar o sistema:
+
+1. Clique duas vezes no arquivo "iniciar.bat"
+
+2. Aguarde carregar (primeira vez demora mais, depois fica mais rápido)
+
+3. O sistema vai abrir automaticamente no Google Chrome
+
+4. IMPORTANTE: Não feche a janela preta do terminal enquanto estiver
+   usando o sistema!
+
+════════════════════════════════════════════════════════════════════════
+                    PASSO 3: ENCERRANDO O SISTEMA
+════════════════════════════════════════════════════════════════════════
+
+Quando terminar de usar:
+
+1. Na janela preta do terminal, pressione qualquer tecla
+
+2. O sistema será encerrado automaticamente
+
+   OU
+
+   Simplesmente feche todas as janelas pretas do terminal
+
+════════════════════════════════════════════════════════════════════════
+                         SOLUÇÃO DE PROBLEMAS
+════════════════════════════════════════════════════════════════════════
+
+PROBLEMA: "winget não encontrado"
+SOLUÇÃO:  Seu Windows precisa estar atualizado. Vá em Configurações >
+          Windows Update e instale todas as atualizações.
+
+PROBLEMA: O sistema não abre após a instalação
+SOLUÇÃO:  Reinicie o computador e tente novamente.
+
+PROBLEMA: "Java não encontrado" ao iniciar
+SOLUÇÃO:  Execute novamente o "instalar.bat" e depois reinicie o PC.
+
+PROBLEMA: A página não carrega no navegador
+SOLUÇÃO:  Aguarde mais um pouco. Na primeira vez pode demorar até
+          2 minutos para tudo carregar.
+
+PROBLEMA: Outra pessoa está usando a porta
+SOLUÇÃO:  Feche outros programas que possam estar usando as portas
+          8080 ou 5173, ou reinicie o computador.
+
+════════════════════════════════════════════════════════════════════════
+                           REQUISITOS
+════════════════════════════════════════════════════════════════════════
+
+- Windows 10 ou Windows 11 (atualizado)
+- Conexão com internet (apenas para instalação)
+- Google Chrome instalado (recomendado, mas funciona em outros navegadores)
+
+════════════════════════════════════════════════════════════════════════
+                           INFORMAÇÕES
+════════════════════════════════════════════════════════════════════════
+
+Endereço do sistema: http://localhost:5173
+
+Se o Chrome não abrir automaticamente, copie o endereço acima e
+cole na barra de endereços do seu navegador.
+
+════════════════════════════════════════════════════════════════════════
