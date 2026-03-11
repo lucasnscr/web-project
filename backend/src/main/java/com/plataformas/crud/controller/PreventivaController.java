@@ -2,7 +2,6 @@ package com.plataformas.crud.controller;
 
 import com.plataformas.crud.model.Preventiva;
 import com.plataformas.crud.service.PreventivaService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +11,15 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/preventivas")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class PreventivaController {
-    
+
     private final PreventivaService preventivaService;
-    
+
+    public PreventivaController(PreventivaService preventivaService) {
+        this.preventivaService = preventivaService;
+    }
+
     @GetMapping
     public ResponseEntity<List<Preventiva>> getAll() {
         return ResponseEntity.ok(preventivaService.findAll());

@@ -1,93 +1,57 @@
-╔══════════════════════════════════════════════════════════════════════╗
-║     SISTEMA DE MANUTENÇÃO PREVENTIVA - GUIA DE INSTALAÇÃO           ║
-╚══════════════════════════════════════════════════════════════════════╝
+==============================================================
+  PreventivaDB - Guia rapido para Windows
+==============================================================
 
-Este guia explica como instalar e usar o sistema no seu computador.
+ARQUIVOS IMPORTANTES
 
-════════════════════════════════════════════════════════════════════════
-                    PASSO 1: PRIMEIRA VEZ (INSTALAÇÃO)
-════════════════════════════════════════════════════════════════════════
+1. instalar.bat
+   Use apenas na primeira vez ou quando precisar atualizar o sistema.
 
-Na PRIMEIRA VEZ que for usar o sistema, siga estes passos:
+2. iniciar.bat
+   Use sempre que quiser abrir o sistema.
 
-1. Clique duas vezes no arquivo "instalar.bat"
 
-2. Se aparecer uma mensagem de segurança do Windows:
-   - Clique em "Mais informações"
-   - Clique em "Executar assim mesmo"
+PASSO 1 - PRIMEIRA INSTALACAO
 
-3. Aguarde a instalação terminar (pode demorar alguns minutos)
-   - O script vai instalar automaticamente: Java, Maven, Node.js e pnpm
-   - Você verá mensagens na tela indicando o progresso
+1. Clique duas vezes em "instalar.bat".
+2. Se o Windows pedir confirmacao, escolha para continuar.
+3. Aguarde o processo terminar.
 
-4. Quando terminar, REINICIE O COMPUTADOR
+O instalador faz tudo sozinho:
+- instala Java 21
+- instala Node.js com npm
+- instala Maven
+- instala as dependencias do frontend
+- gera a interface web
+- cria o arquivo final da aplicacao
 
-════════════════════════════════════════════════════════════════════════
-                    PASSO 2: ABRINDO O SISTEMA
-════════════════════════════════════════════════════════════════════════
+Durante a instalacao, a internet e obrigatoria.
 
-Toda vez que quiser usar o sistema:
 
-1. Clique duas vezes no arquivo "iniciar.bat"
+PASSO 2 - ABRIR O SISTEMA
 
-2. Aguarde carregar (primeira vez demora mais, depois fica mais rápido)
+1. Clique duas vezes em "iniciar.bat".
+2. Aguarde alguns segundos.
+3. O navegador vai abrir automaticamente.
 
-3. O sistema vai abrir automaticamente no Google Chrome
+Endereco do sistema:
+http://localhost:8080
 
-4. IMPORTANTE: Não feche a janela preta do terminal enquanto estiver
-   usando o sistema!
 
-════════════════════════════════════════════════════════════════════════
-                    PASSO 3: ENCERRANDO O SISTEMA
-════════════════════════════════════════════════════════════════════════
+PASSO 3 - FECHAR O SISTEMA
 
-Quando terminar de usar:
+1. Volte para a janela preta que abriu junto com o sistema.
+2. Pressione qualquer tecla.
 
-1. Na janela preta do terminal, pressione qualquer tecla
+Pronto. O sistema sera encerrado.
 
-2. O sistema será encerrado automaticamente
 
-   OU
+SE DER ALGUM PROBLEMA
 
-   Simplesmente feche todas as janelas pretas do terminal
+- Rode novamente o arquivo "instalar.bat".
+- Verifique se existe outro programa usando a porta 8080.
+- Veja os logs na pasta "logs".
 
-════════════════════════════════════════════════════════════════════════
-                         SOLUÇÃO DE PROBLEMAS
-════════════════════════════════════════════════════════════════════════
-
-PROBLEMA: "winget não encontrado"
-SOLUÇÃO:  Seu Windows precisa estar atualizado. Vá em Configurações >
-          Windows Update e instale todas as atualizações.
-
-PROBLEMA: O sistema não abre após a instalação
-SOLUÇÃO:  Reinicie o computador e tente novamente.
-
-PROBLEMA: "Java não encontrado" ao iniciar
-SOLUÇÃO:  Execute novamente o "instalar.bat" e depois reinicie o PC.
-
-PROBLEMA: A página não carrega no navegador
-SOLUÇÃO:  Aguarde mais um pouco. Na primeira vez pode demorar até
-          2 minutos para tudo carregar.
-
-PROBLEMA: Outra pessoa está usando a porta
-SOLUÇÃO:  Feche outros programas que possam estar usando as portas
-          8080 ou 5173, ou reinicie o computador.
-
-════════════════════════════════════════════════════════════════════════
-                           REQUISITOS
-════════════════════════════════════════════════════════════════════════
-
-- Windows 10 ou Windows 11 (atualizado)
-- Conexão com internet (apenas para instalação)
-- Google Chrome instalado (recomendado, mas funciona em outros navegadores)
-
-════════════════════════════════════════════════════════════════════════
-                           INFORMAÇÕES
-════════════════════════════════════════════════════════════════════════
-
-Endereço do sistema: http://localhost:5173
-
-Se o Chrome não abrir automaticamente, copie o endereço acima e
-cole na barra de endereços do seu navegador.
-
-════════════════════════════════════════════════════════════════════════
+Arquivos de log:
+- logs\instalacao.log
+- logs\aplicacao.log
