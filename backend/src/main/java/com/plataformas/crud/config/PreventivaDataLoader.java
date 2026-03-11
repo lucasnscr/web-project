@@ -2,22 +2,26 @@ package com.plataformas.crud.config;
 
 import com.plataformas.crud.model.Preventiva;
 import com.plataformas.crud.repository.PreventivaRepository;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@RequiredArgsConstructor
-@Slf4j
 @Order(2)
 public class PreventivaDataLoader implements CommandLineRunner {
 
+    private static final Logger log = LoggerFactory.getLogger(PreventivaDataLoader.class);
+
     private final PreventivaRepository preventivaRepository;
+
+    public PreventivaDataLoader(PreventivaRepository preventivaRepository) {
+        this.preventivaRepository = preventivaRepository;
+    }
 
     @Override
     public void run(String... args) {
@@ -480,20 +484,20 @@ public class PreventivaDataLoader implements CommandLineRunner {
 
     private Preventiva createPreventiva(String modelo, String fabricante, String[] item, 
                                         String mo250, String mo500, String mo750, String mo1000) {
-        return Preventiva.builder()
-                .modelo(modelo)
-                .fabricante(fabricante)
-                .itemDescricao(item[0])
-                .partNumber(item[1].equals("-") ? null : item[1])
-                .codSap(item[2].equals("-") ? null : item[2])
-                .qtd250h(item[3].equals("-") ? null : item[3])
-                .qtd500h(item[4].equals("-") ? null : item[4])
-                .qtd750h(item[5].equals("-") ? null : item[5])
-                .qtd1000h(item[6].equals("-") ? null : item[6])
-                .horasMo250h(mo250)
-                .horasMo500h(mo500)
-                .horasMo750h(mo750)
-                .horasMo1000h(mo1000)
-                .build();
+        Preventiva preventiva = new Preventiva();
+        preventiva.setModelo(modelo);
+        preventiva.setFabricante(fabricante);
+        preventiva.setItemDescricao(item[0]);
+        preventiva.setPartNumber(item[1].equals("-") ? null : item[1]);
+        preventiva.setCodSap(item[2].equals("-") ? null : item[2]);
+        preventiva.setQtd250h(item[3].equals("-") ? null : item[3]);
+        preventiva.setQtd500h(item[4].equals("-") ? null : item[4]);
+        preventiva.setQtd750h(item[5].equals("-") ? null : item[5]);
+        preventiva.setQtd1000h(item[6].equals("-") ? null : item[6]);
+        preventiva.setHorasMo250h(mo250);
+        preventiva.setHorasMo500h(mo500);
+        preventiva.setHorasMo750h(mo750);
+        preventiva.setHorasMo1000h(mo1000);
+        return preventiva;
     }
 }

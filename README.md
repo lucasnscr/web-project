@@ -24,37 +24,37 @@ O PreventivaDB é um sistema completo de gestão de manutenção preventiva de p
 
 ```
 plataformas-crud/
-├── backend/                    # API REST Spring Boot
+├── backend/                      # API REST Spring Boot + pacote final
 │   ├── src/main/java/
 │   │   └── com/plataformas/crud/
-│   │       ├── config/         # Configurações (CORS, DataLoader)
-│   │       ├── controller/     # Controllers REST
-│   │       ├── model/          # Entidades JPA
-│   │       ├── repository/     # Repositórios Spring Data
-│   │       └── service/        # Camada de serviço
+│   │       ├── config/           # Configuracoes do backend
+│   │       ├── controller/       # Endpoints REST
+│   │       ├── model/            # Entidade JPA
+│   │       ├── repository/       # Repositorios Spring Data
+│   │       └── service/          # Regras de negocio
+│   ├── mvnw / mvnw.cmd           # Maven Wrapper
 │   └── pom.xml
-│
-└── frontend/                   # SPA React + TypeScript
-    ├── src/
-    │   ├── components/         # Componentes React
-    │   ├── services/           # Serviços de API
-    │   └── types/              # Tipos TypeScript
-    └── package.json
+├── frontend/                     # SPA React + TypeScript
+│   ├── src/
+│   │   ├── services/             # Cliente HTTP
+│   │   └── types/                # Tipos TypeScript
+│   └── package.json
+├── instalar.bat                  # Instalacao completa no Windows
+└── iniciar.bat                   # Inicializacao em um clique no Windows
 ```
 
 ## 🛠️ Tecnologias
 
 ### Backend
 - **Java 21** - Última versão LTS
-- **Spring Boot 3.4.2** - Framework web
+- **Spring Boot 3.3.0** - Framework web
 - **Spring Data JPA** - Persistência de dados
 - **H2 Database** - Banco de dados em arquivo (persistente)
-- **Lombok** - Redução de boilerplate
 - **Maven** - Gerenciamento de dependências
 
 ### Frontend
 - **React 19** - Biblioteca UI
-- **TypeScript 5.7** - Tipagem estática
+- **TypeScript 5.9** - Tipagem estática
 - **Vite 7** - Build tool
 - **TailwindCSS 4** - Estilização
 - **Axios** - Cliente HTTP
@@ -81,28 +81,33 @@ plataformas-crud/
 
 ## 🚀 Como Executar
 
-### Pré-requisitos
+### Modo simples no Windows
+- Execute `instalar.bat` na primeira vez.
+- Depois execute `iniciar.bat`.
+- O sistema abre em `http://localhost:8080`.
+
+Nesse modo, o frontend e o backend rodam juntos em um unico `.jar`, sem precisar subir dois servidores separados.
+
+### Pré-requisitos para desenvolvimento
 - Java 21+
 - Maven 3.8+
-- Node.js 18+
-- pnpm (ou npm/yarn)
+- Node.js 20+
+- pnpm 10+
 
-### Backend
+### Desenvolvimento do backend
 
 ```bash
-# Navegar para o diretório do backend
 cd backend
 
-# Compilar e executar
-mvn spring-boot:run
+# Compilar e executar com o wrapper do projeto
+./mvnw spring-boot:run
 ```
 
 O backend estará disponível em `http://localhost:8080`
 
-### Frontend
+### Desenvolvimento do frontend
 
 ```bash
-# Navegar para o diretório do frontend
 cd frontend
 
 # Instalar dependências

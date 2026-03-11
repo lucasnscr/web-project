@@ -2,7 +2,6 @@ package com.plataformas.crud.service;
 
 import com.plataformas.crud.model.Preventiva;
 import com.plataformas.crud.repository.PreventivaRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,12 +11,15 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class PreventivaService {
-    
+
     private final PreventivaRepository preventivaRepository;
-    
+
+    public PreventivaService(PreventivaRepository preventivaRepository) {
+        this.preventivaRepository = preventivaRepository;
+    }
+
     public List<Preventiva> findAll() {
         return preventivaRepository.findAll();
     }
